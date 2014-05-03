@@ -8,14 +8,12 @@ getent passwd genius >/dev/null 2>&1 && ret=true
 
 if $ret; 
 then
-    echo "genius exists"
+    echo "+ genius exists"
 else
-    echo "genius does not exist - create it, log in as genius nd run this again"
-    echo "press <ENTER> to create it"
-    echo "+ sudo useradd genius"
-    sudo useradd genius
-    echo "+ sudo passwd genius"
-    sudo passwd genius
+    echo "+ genius does not exist - create it, log in as genius nd run this again"
+    echo "+ press <ENTER> to create it"
+    echo "+ sudo adduser genius"
+    sudo adduser genius
 fi
 
 
