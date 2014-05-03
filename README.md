@@ -1,12 +1,17 @@
 docker-ssh
 ==========
 
+We assume you already have an ssh server running in your container!
+
 Allows connecting to all your local docker containers using ssh simply like this:
 
-	ssh container-name.docker
+       ssh <user>@<container-name.docker> <port>
+       e.g.:
+       ssh student@reslocal/ubuntu-base:latest.docker 22
 
-if `container-name` is the name of the container and ssh is running in it. **Automatically install for the current user** using
+To build/install it for your current user do the following:
 
-	curl -s https://raw.github.com/henrik-muehe/docker-ssh/master/install | /bin/bash
-
-you need `nc`, `uudecode` and `curl` for the installer to work, only `nc` if you install manually.
+       ./00_install-packages.sh  
+       ./01_make.sh
+       ./02_install.sh
+       ./03_run.sh (will not run anything, but just show and example)
